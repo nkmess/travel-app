@@ -20,9 +20,15 @@
             %li
               = link_to "#" do
                 %i.material-icons search
-            %li
-              = link_to 'Login', "#"
-            %li
-              = link_to 'Signup', "#"
+            - if user_signed_in?
+              %li
+                = link_to 'Logout', "#"
+              %li
+                = link_to 'Mypage', "#"
+            - else
+              %li
+                = link_to 'Login', "#"
+              %li
+                = link_to 'Signup', "#"
     = yield
     %footer
