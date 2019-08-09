@@ -1,0 +1,11 @@
+.user__form {
+  margin: 0 400px;
+  &__submit {
+    display: flex;
+    justify-content: center;
+    &__btn {
+      height: 50px;
+      width: 150px;
+    }
+  }
+}
