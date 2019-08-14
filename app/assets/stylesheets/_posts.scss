@@ -1,3 +1,16 @@
 .main__wrapper {
   margin-top: 60px;
 }
+
+.post__main{
+  &__btn {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+  }
+}
+
+// new.html
+.post__form {
+  padding: 0 400px 20px;
+}

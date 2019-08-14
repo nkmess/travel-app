@@ -1,0 +1,31 @@
+.main__wrapper
+  = form_tag('/posts', method: :post) do
+    .post__form
+      .post__form__pic 
+        %label.post__form__top 写真
+        %input{:name => "image", :placeholder => "Image Url", :type => "text"}
+      .post__form__place
+        .post__form__place__select
+          %form
+          %label.post__form__top 地域
+          %select{:name => "example"}
+          %option{:value => "サンプル1"} サンプル1
+          %option{:value => "サンプル2"} サンプル2
+          %option{:value => "サンプル3"} サンプル3
+          %label.post__form__top 国
+          %select{:name => "example", :size => "3"}
+          %option{:value => "サンプル1"} サンプル1
+          %option{:value => "サンプル2"} サンプル2
+          %option{:value => "サンプル3"} サンプル3
+      .post__form__duration
+        %label.post__form__top 期間
+        %select{:name => "example", :size => "3"}
+        %option{:value => "サンプル1"} サンプル1
+        %option{:value => "サンプル2"} サンプル2
+        %option{:value => "サンプル3"} サンプル3
+      .post__form__text
+        %label.post__form__top 本文
+        %textarea{:cols => "30", :name => "text", :placeholder => "text", :rows => "30"}
+      .post__form__btn
+        %input{:type => "submit", :value => "SENT"}
+
