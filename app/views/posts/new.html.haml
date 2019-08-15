@@ -1,5 +1,5 @@
 .main__wrapper
-  = form_tag('/posts', method: :post) do
+  = form_with model: @post do |f|
     .post__form
       .post__form__pic 
         %label.post__form__top 写真
@@ -25,7 +25,7 @@
         %option{:value => "サンプル3"} サンプル3
       .post__form__text
         %label.post__form__top 本文
-        %textarea{:cols => "30", :name => "text", :placeholder => "text", :rows => "30"}
+        = f.text_field :text, class: "post__form__text__box"
       .post__form__btn
         %input{:type => "submit", :value => "SENT"}
 

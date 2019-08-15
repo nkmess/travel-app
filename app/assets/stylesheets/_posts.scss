@@ -13,4 +13,11 @@
 // new.html
 .post__form {
   padding: 0 400px 20px;
+
+
+  &__text {
+    &__box {
+      height: 300px;
+    }
+  }
 }
