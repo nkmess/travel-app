@@ -3,21 +3,22 @@
     .post__form
       .post__form__pic 
         %label.post__form__top 写真
-        %input{:name => "image", :placeholder => "Image Url", :type => "text"}
+        .post__form__pic__box{onclick: "$('#image__upload').click()"}
+        = f.file_field :image, id: "image__upload", style: "display: none;"
       .post__form__place
         .post__form__place__select
-          %form
-          %label.post__form__top 地域
+          -# %form
+          -# %label.post__form__top 地域
           
-          %select{:name => "example"}
-          %option{:value => "サンプル1"} サンプル1
-          %option{:value => "サンプル2"} サンプル2
-          %option{:value => "サンプル3"} サンプル3
+          -# %select{:name => "example"}
+          -# %option{:value => "サンプル1"} サンプル1
+          -# %option{:value => "サンプル2"} サンプル2
+          -# %option{:value => "サンプル3"} サンプル3
           %label.post__form__top 国
-          = f.select :country, @countries, {prompt: '---'}, class: "browser-default"
+          = f.select :country, @countries, {prompt: '国を選んでください'}, class: "browser-default", id: "country_select"
       .post__form__duration
         %label.post__form__top 期間
-        = f.select :duration, Post.durations_i18n.invert, {prompt: '---'}, class: "browser-default"
+        = f.select :duration, Post.durations_i18n.invert, {prompt: '期間を選んでください'}, class: "browser-default"
 
       .post__form__text
         %label.post__form__top 本文
