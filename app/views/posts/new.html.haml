@@ -8,15 +8,13 @@
         .post__form__place__select
           %form
           %label.post__form__top 地域
+          
           %select{:name => "example"}
           %option{:value => "サンプル1"} サンプル1
           %option{:value => "サンプル2"} サンプル2
           %option{:value => "サンプル3"} サンプル3
           %label.post__form__top 国
-          %select{:name => "example", :size => "3"}
-          %option{:value => "サンプル1"} サンプル1
-          %option{:value => "サンプル2"} サンプル2
-          %option{:value => "サンプル3"} サンプル3
+          = f.select :country, @countries, {prompt: '---'}, class: "browser-default"
       .post__form__duration
         %label.post__form__top 期間
         = f.select :duration, Post.durations_i18n.invert, {prompt: '---'}, class: "browser-default"

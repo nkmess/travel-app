@@ -6,6 +6,7 @@ class PostsController < ApplicationController
   end
   
   def new
+    @countries = ISO3166::Country.all_translated('JA')
   end
 
   def create
