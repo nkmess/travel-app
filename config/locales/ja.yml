@@ -1,0 +1,14 @@
+ja:
+  enums:
+    post:
+      duration:
+        in_two_days: "１〜２日"
+        in_three_days: "２〜３日"
+        in_five_days: "４〜５日"
+        in_seven_days: "１週間程度"
+        in_two_weeks: "２週間程度"
+        in_a_month: "１ヶ月程度"
+        in_three_months: "３ヶ月程度"
+        in_six_months: "６ヶ月程度"
+        in_a_year: "１年程度"
+        over_a_year: "１年以上"
