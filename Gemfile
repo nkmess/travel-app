@@ -62,8 +62,11 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
+
 gem 'devise'
 gem 'enum_help'
 gem 'countries'
 gem 'haml-rails'
 gem 'mini_magick'
+gem 'pry-byebug'
+gem 'pry-rails'
