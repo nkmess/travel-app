@@ -16,8 +16,5 @@ module TravelApp
       g.helper false
       g.test_framework false
     end
-    ISO3166.configure do |config|
-      config.locales = :ja
-    end
   end
 end
