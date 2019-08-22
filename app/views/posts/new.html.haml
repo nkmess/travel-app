@@ -1,31 +1,22 @@
 .main__wrapper
-  = form_tag('/posts', method: :post) do
+  = form_with model: @post, method: :post do |f|
     .post__form
       .post__form__pic 
         %label.post__form__top 写真
-        %input{:name => "image", :placeholder => "Image Url", :type => "text"}
+        .post__form__pic__box#img_field{onclick: "$('#image__upload').click()"}
+          %i.medium.material-icons add_a_photo
+        .post__form__pic__preview
+          %img#preview{style:"height: 400px; width: 612px;"}
+        = f.file_field :image, id: "image__upload", style: "display: none;"
       .post__form__place
-        .post__form__place__select
-          %form
-          %label.post__form__top 地域
-          %select{:name => "example"}
-          %option{:value => "サンプル1"} サンプル1
-          %option{:value => "サンプル2"} サンプル2
-          %option{:value => "サンプル3"} サンプル3
-          %label.post__form__top 国
-          %select{:name => "example", :size => "3"}
-          %option{:value => "サンプル1"} サンプル1
-          %option{:value => "サンプル2"} サンプル2
-          %option{:value => "サンプル3"} サンプル3
+        %label.post__form__top 国
+        = f.collection_select :country, @countries, :number, :name, {prompt: '国を選んでください'}, class: "browser-default", id: "country_select"
       .post__form__duration
         %label.post__form__top 期間
-        %select{:name => "example", :size => "3"}
-        %option{:value => "サンプル1"} サンプル1
-        %option{:value => "サンプル2"} サンプル2
-        %option{:value => "サンプル3"} サンプル3
+        = f.select :duration, Post.durations_i18n.invert, {prompt: '期間を選んでください'}, class: "browser-default"
       .post__form__text
         %label.post__form__top 本文
-        %textarea{:cols => "30", :name => "text", :placeholder => "text", :rows => "30"}
+        = f.text_area :text, class: "post__form__text__box"
       .post__form__btn
-        %input{:type => "submit", :value => "SENT"}
+        = f.submit '送信', class: "btn waves-effect waves-light"
 
