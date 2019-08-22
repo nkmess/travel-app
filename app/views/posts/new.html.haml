@@ -10,7 +10,7 @@
         = f.file_field :image, id: "image__upload", style: "display: none;"
       .post__form__place
         %label.post__form__top 国
-        = f.select :country, @countries, {prompt: '国を選んでください'}, class: "browser-default", id: "country_select"
+        = f.collection_select :country, @countries, :number, :name, {prompt: '国を選んでください'}, class: "browser-default", id: "country_select"
       .post__form__duration
         %label.post__form__top 期間
         = f.select :duration, Post.durations_i18n.invert, {prompt: '期間を選んでください'}, class: "browser-default"
