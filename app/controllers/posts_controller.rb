@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   
   def new
     @post = Post.new
-    @countries = ISO3166::Country.all_translated('JA')
+    @countries = ISO3166::Country.all
   end
 
   def create
