@@ -5,16 +5,31 @@
     display: flex;
     margin: 10px 200px 30px;
   }
+  // スライダー
   &__sliderbox {
     width: 625px;
     height: 375px;
     .slider__panel{
       width: 625px;
       height: 375px;
+      overflow: hidden;
     }
   }
+  // サイドバー
   &__sidebar {
     width: 300px;
     height: 250px;
+    margin-left: 50px;
+    &__list {
+      height: 30px;
+      line-height: 30px;
+      border-bottom: dotted 1px silver;
+      color: black;
+      font-size: 16px;
+      &__area {
+        margin-left: 10px;
+        font-size: 12px;
+      }
+    }
   }
 }
