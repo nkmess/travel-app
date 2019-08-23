@@ -3,6 +3,23 @@
 }
 
 .post__main{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 200px 20px;
+  .row {
+    width: 30%;
+    margin:0 15px 30px 0;
+    .image-top {
+      text-align: center;
+    }
+    .card-content p{
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+    }
+  }
+
   &__btn {
     position: fixed;
     right: 30px;
@@ -57,4 +74,9 @@
     text-align: center;
     cursor: pointer;
   }
+}
+
+.pagination {
+  margin: 0 200px 70px;
+  text-align: center;
 }
