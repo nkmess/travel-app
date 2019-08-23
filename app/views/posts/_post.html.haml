@@ -1,0 +1,14 @@
+.row
+  .col.s12
+    .image-top
+      = ISO3166::Country.find_country_by_number(post.country).alpha3
+      = ISO3166::Country.find_country_by_number(post.country).emoji_flag
+    .card
+      .card-image
+        = image_tag post.image
+      .card-content
+        %p
+          = post.text
+      .card-action
+        = link_to "Show Detail", "#"
+        %i.material-icons favorite

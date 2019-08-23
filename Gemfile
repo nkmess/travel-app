@@ -66,6 +66,7 @@ gem 'countries'
 gem 'devise'
 gem 'enum_help'
 gem 'haml-rails'
+gem 'kaminari'
 gem 'mini_magick'
 gem "nokogiri", ">= 1.10.4"
 gem 'pry-byebug'

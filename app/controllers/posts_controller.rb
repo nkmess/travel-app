@@ -3,6 +3,17 @@ class PostsController < ApplicationController
   before_action :move_to_index, except: :index
 
   def index
+    @posts = Post.order("created_at DESC").page(params[:page]).per(6)
+
+    @sidebarAreas = 
+      [{area:"Europe", kana:"ヨーロッパ", link:""},
+      {area:"Africa", kana:"アフリカ", link:""},
+      {area:"North America", kana:"北アメリカ", link:""},
+      {area:"Latin America", kana:"ラテンアメリカ", link:""},
+      {area:"Asia", kana:"アジア", link:""},
+      {area:"Oceania & Pacific Ocean", kana:"オセアニア＆太平洋", link:""},
+      {area:"Middle East", kana:"中東", link:""},
+      {area:"All Over The World", kana:"世界各地", link:""}]
   end
   
   def new

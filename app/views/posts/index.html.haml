@@ -1,32 +1,20 @@
 .main__wrapper
+  .freespace
+    .freespace__content
+      .freespace__sliderbox
+        = image_tag "/images/topslider1.PNG", class: "slider__panel"
+        = image_tag "/images/topslider2.PNG", class: "slider__panel"
+        = image_tag "/images/topslider3.PNG", class: "slider__panel"
+      .freespace__sidebar
+        %ul.freespace__sidebar__menu
+          = render partial: 'freespace__sidebar', collection: @sidebarAreas, as: 'sidebarArea' 
   .post__main
-    .row
-      .col.s6.offset-s3
-        .card
-          .card-image
-            %img{src: "https://images.pexels.com/photos/1486222/pexels-photo-1486222.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"}/
-            %span.card-title Card Title
-          .card-content
-            %p
-              I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.
-          .card-action
-            = link_to "Show Detail", "#"
-            %i.material-icons favorite
-    .row
-      .col.s6.offset-s3
-        .card
-          .card-image
-            %img{src: "https://images.pexels.com/photos/739407/pexels-photo-739407.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"}/
-            %span.card-title Card Title
-          .card-content
-            %p
-              I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.
-          .card-action
-            = link_to "Show Detail", "#"
-            %i.material-icons favorite
+    = render partial: 'post', collection: @posts
+
   .post__main__btn
     = link_to new_post_path, class: "btn-floating btn-large waves-effect waves-light red" do
       %i.material-icons add
+      
+  .pagination
+  = paginate(@posts)
 
