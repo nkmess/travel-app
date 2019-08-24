@@ -15,6 +15,11 @@ class PostsController < ApplicationController
       {area:"Middle East", kana:"中東", link:""},
       {area:"All Over The World", kana:"世界各地", link:""}]
   end
+
+  def show
+    @post = Post.find(params[:id])
+    @country = ISO3166::Country.find_country_by_number(@post.country)
+  end
   
   def new
     @post = Post.new

@@ -1,0 +1,27 @@
+.main-wrapper
+  .post__info
+    .post__info__top
+      = image_tag @post.image, class: "post__info__image"
+      .post__info__sideinfo
+        %ul.post__info__sideinfo__lists
+          %li.post__info__sideinfo__list
+            %label エリア
+            .post__info__sideinfo__list-contents
+            = @country.subregion
+          %li.post__info__sideinfo__list
+            %label 国
+            .post__info__sideinfo__list-contents
+            = @country.name
+          %li.post__info__sideinfo__list
+            %label 期間
+            .post__info__sideinfo__list-contents
+            = @post.duration_i18n
+          %li.post__info__sideinfo__list
+            %label ユーザー名
+            .post__info__sideinfo__list-contents
+            = @post.user.name
+    .post__info__bottom
+      .post__info__text
+        = @post.text
+    .post__info__btn
+      = link_to "<もどる", root_path
