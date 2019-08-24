@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 
   before_action :move_to_index, except: :index
+  before_action :set_post, only: [:show]
 
   def index
     @posts = Post.order("created_at DESC").page(params[:page]).per(6)
@@ -17,7 +18,6 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
     @country = ISO3166::Country.find_country_by_number(@post.country)
   end
   
@@ -46,5 +46,10 @@ class PostsController < ApplicationController
 
   def move_to_index
     redirect_to action: :index unless user_signed_in?
+  end
+
+
+  def set_post
+    @post = Post.find(params[:id])
   end
 end
