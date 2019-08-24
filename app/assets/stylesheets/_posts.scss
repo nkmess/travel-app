@@ -80,3 +80,45 @@
   margin: 0 200px 70px;
   text-align: center;
 }
+
+// show.html.haml
+.post__info {
+  margin: 10px 250px 20px;
+  &__top {
+    display: flex;
+    width: 100%;
+    height: 460px;
+    margin-top: 40px;
+  }
+  &__image {
+    width: 565px;
+    height: 460px;
+  }
+  &__sideinfo{
+    width: calc(100% - 565px);
+    height: 460px;
+    &__lists {
+      margin: 20px;
+    }
+    &__list {
+      width: 100%;
+      padding: 10px;
+      border-bottom: dotted 1px silver;
+    }
+  }
+  &__bottom {
+    width: 100%;
+    height: 100%;
+    margin: 60px 0 60px;
+  }
+  &__text {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    border-top: dotted 1px silver;
+    border-bottom: dotted 1px silver;
+  }
+  &__btn {
+    margin: 30px auto 40px;
+  }
+}

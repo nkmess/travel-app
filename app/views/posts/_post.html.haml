@@ -10,5 +10,5 @@
         %p
           = post.text
       .card-action
-        = link_to "Show Detail", "#"
+        = link_to "Show Detail", post_path(post, params: { post_id: params[:id]}), class: "pink-text lighten-2"
         %i.material-icons favorite
