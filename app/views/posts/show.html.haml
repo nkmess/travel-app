@@ -20,6 +20,10 @@
             %label ユーザー名
             .post__info__sideinfo__list-contents
             = @post.user.name
+          - if user_signed_in? && current_user.id == @post.user.id
+            %li.post__info__sideinfo__list
+              = link_to edit_post_path do
+                %i.material-icons mode_edit
     .post__info__bottom
       .post__info__text
         = @post.text
