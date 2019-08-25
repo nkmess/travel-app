@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   before_action :move_to_index, except: :index
-  before_action :set_post, only: [:show]
+  before_action :set_post, only: [:show, :edit]
 
   def index
     @posts = Post.order("created_at DESC").page(params[:page]).per(6)
@@ -37,6 +37,10 @@ class PostsController < ApplicationController
       end
   end
 
+  def edit
+    @countries = ISO3166::Country.all
+  end
+
   private
   def post_params
     params.require(:post).permit(:text, :country, :duration, :image).merge(user_id: current_user.id)
@@ -52,4 +56,5 @@ class PostsController < ApplicationController
   def set_post
     @post = Post.find(params[:id])
   end
+
 end
