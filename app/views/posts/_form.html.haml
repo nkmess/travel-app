@@ -3,11 +3,17 @@
   .post__form
     .post__form__pic 
       %label.post__form__top 写真
-      .post__form__pic__box#img_field{onclick: "$('#image__upload').click()"}
-        %i.medium.material-icons add_a_photo
-      .post__form__pic__preview
-        %img#preview{style:"height: 400px; width: 612px;"}
-      = f.file_field :image, id: "image__upload", style: "display: none;"
+      - if request.path_info = edit_post_path
+        .post__form__pic__preview
+          = image_tag post.image, {style:"height: 400px; width: 612px;"}
+      - elsif request.path_info = new_post_path
+        
+        .post__form__pic__box#img_field{onclick: "$('#image__upload').click()"}
+          %i.medium.material-icons add_a_photo
+        .post__form__pic__preview__new
+          %img#preview{style:"height: 400px; width: 612px;"}
+        = f.file_field :image, id: "image__upload", style: "display: none;"
+
     .post__form__place
       %label.post__form__top 国
       = f.collection_select :country, @countries, :number, :name, {prompt: '国を選んでください'}, class: "browser-default", id: "country_select"
