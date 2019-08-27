@@ -47,7 +47,9 @@
     &__preview{
       width: 612px;
       height: 400px;
-      display: none;
+      &__new{
+        display: none;
+      }
     }
   }
 

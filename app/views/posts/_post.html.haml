@@ -5,7 +5,7 @@
       = ISO3166::Country.find_country_by_number(post.country).emoji_flag
     .card
       .card-image
-        = image_tag post.image
+        = image_tag post.image, {style:"height: 215px; width: 285px;"}
       .card-content
         %p
           = post.text
