@@ -8,7 +8,7 @@ document.addEventListener('turbolinks:load', function() {
       reader = new FileReader();
   
       $(".post__form__pic__box#img_field").css('display', 'none');
-      $('.post__form__pic__preview').css('display', 'block');
+      $('.post__form__pic__preview__new').css('display', 'block');
       reader.onload = function(e) {
         $("#preview").attr('src', e.target.result);
       }

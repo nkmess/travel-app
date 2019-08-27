@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   before_action :move_to_index, except: :index
-  before_action :set_post, only: [:show, :edit]
+  before_action :set_post, only: [:show, :edit, :update]
 
   def index
     @posts = Post.order("created_at DESC").page(params[:page]).per(6)
@@ -38,7 +38,21 @@ class PostsController < ApplicationController
   end
 
   def edit
+    if @post.user.id != current_user.id
+      redirect_to root_path
+    end
     @countries = ISO3166::Country.all
+  end
+
+  def update
+    if @post.user_id == current_user.id
+      if @post.update(post_params)
+        flash[:notice] = "更新しました"
+        redirect_to controller: :posts, action: :index
+      else
+        flash[:notice] = "更新に失敗しました"
+      end
+    end
   end
 
   private
