@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
-  before_action :move_to_index, except: :index
-  before_action :set_post, only: [:show, :edit, :update]
+  before_action :move_to_index, except: [:index, :show]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
     @posts = Post.order("created_at DESC").page(params[:page]).per(6)
@@ -51,6 +51,18 @@ class PostsController < ApplicationController
         redirect_to controller: :posts, action: :index
       else
         flash[:notice] = "更新に失敗しました"
+      end
+    end
+  end
+
+  def destroy
+    if @post.user_id == current_user.id
+      if @post.destroy
+        flash[:alert] = "削除しました"
+        redirect_to root_path
+      else
+        flash[:alert] = "削除に失敗しました"
+        redirect_to post_path
       end
     end
   end
