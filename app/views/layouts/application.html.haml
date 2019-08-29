@@ -30,7 +30,7 @@
               %li
                 = link_to 'Logout', destroy_user_session_path, method: :delete
               %li
-                = link_to 'Mypage', "#"
+                = link_to 'Mypage', user_path((current_user))
             - else
               %li
                 = link_to 'Login', new_user_session_path, class: :post
