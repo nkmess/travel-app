@@ -1,0 +1,10 @@
+.mypage__top {
+  margin: 10px 200px 30px;
+  &__name {
+  width: 50%;
+  margin: 0 auto;
+  border-bottom: dotted 1px silver;
+  font-size: 20px;
+  text-align: center;
+  }
+}
