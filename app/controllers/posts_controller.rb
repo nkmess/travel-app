@@ -39,19 +39,21 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @countries = ISO3166::Country.all
     if @post.user.id != current_user.id
       redirect_to root_path
     end
-    @countries = ISO3166::Country.all
   end
 
   def update
+    @countries = ISO3166::Country.all
     if @post.user_id == current_user.id
       if @post.update(post_params)
         flash[:notice] = "更新しました"
         redirect_to controller: :posts, action: :index
       else
-        flash[:notice] = "更新に失敗しました"
+        flash[:alert] = "更新に失敗しました"
+        render('posts/edit')
       end
     end
   end
