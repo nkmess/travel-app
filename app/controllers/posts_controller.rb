@@ -27,13 +27,14 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post= Post.create(post_params)
-      if @post.save()
+    @post= Post.new(post_params)
+    @countries = ISO3166::Country.all
+      if @post.save
         flash[:notice] = "投稿が完了しました！"
         redirect_to root_path
       else
         flash[:alert] = "投稿に失敗しました…"
-        redirect_to root_path
+        render new_post_path
       end
   end
 
