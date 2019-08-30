@@ -2,6 +2,8 @@
   .post__form
     .post__form__pic 
       %label.post__form__top 写真
+      - if @post.errors.any?
+        %p.post__form__error 写真を選択してください
       - if @path.is('posts#edit')
         .post__form__pic__preview
           = image_tag post.image, {style:"height: 400px; width: 612px;"}
@@ -14,12 +16,19 @@
 
     .post__form__place
       %label.post__form__top 国
+      - if @post.errors.any?
+        %p.post__form__error 国を選択してください
       = f.collection_select :country, @countries, :number, :name, {prompt: '国を選んでください'}, class: "browser-default", id: "country_select"
     .post__form__duration
       %label.post__form__top 期間
+      - if @post.errors.any?
+        %p.post__form__error 期間を選択してください
       = f.select :duration, Post.durations_i18n.invert, {prompt: '期間を選んでください'}, class: "browser-default"
     .post__form__text
       %label.post__form__top 本文
+      - if @post.errors.any?
+        %p.post__form__error 本文を入力してください
       = f.text_area :text, class: "post__form__text__box"
+
     .post__form__btn
       = f.submit '送信', class: "btn waves-effect waves-light"
