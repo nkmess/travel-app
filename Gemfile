@@ -71,3 +71,4 @@ gem 'mini_magick'
 gem "nokogiri", ">= 1.10.4"
 gem 'pry-byebug'
 gem 'pry-rails'
+gem 'rails-i18n'
