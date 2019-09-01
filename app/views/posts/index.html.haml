@@ -1,4 +1,9 @@
 .main__wrapper
+  .search__form
+    = form_tag search_posts_path, method: :get do
+      .row
+        = text_field_tag :post, "", class: "search__form__box col s6 offset-s2", placeholder: "調べたいことは？ (例) 海 , お土産"
+        = submit_tag "検索", class: "search__form__btn col s1 offset-s1"
   .freespace
     .freespace__content
       .freespace__sliderbox
