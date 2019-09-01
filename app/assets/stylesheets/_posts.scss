@@ -2,6 +2,18 @@
   margin-top: 60px;
 }
 
+.search__form{
+  margin: 10px 200px 20px;
+  &__box {
+    height: 50px;
+  }
+  &__btn {
+    height: 45px;
+    background-color: gray;
+    color: white;
+  }
+}
+
 .post__main{
   display: flex;
   flex-wrap: wrap;
@@ -10,6 +22,7 @@
     width: 30%;
     margin:0 15px 30px 0;
     .image-top {
+      width: 100%;
       text-align: center;
     }
     .card-content p{
@@ -130,4 +143,25 @@
 }
 .edit_btn {
   margin-right: 20px;
+}
+
+.post__search{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 200px 20px;
+  &__noresult{
+    font-size: 18px;
+  }
+  .row {
+    width: 30%;
+    margin:0 15px 30px 0;
+    .image-top {
+      text-align: center;
+    }
+    .card-content p{
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
 }

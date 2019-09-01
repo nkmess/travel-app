@@ -70,6 +70,10 @@ class PostsController < ApplicationController
     end
   end
 
+  def search
+    @posts = Post.where('text LIKE(?)', "%#{params[:post]}%")
+  end
+
   private
   def post_params
     params.require(:post).permit(:text, :country, :duration, :image).merge(user_id: current_user.id)

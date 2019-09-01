@@ -1,0 +1,11 @@
+.main__wrapper
+  .post__search
+    - if @posts.present?
+      = render partial: 'post', collection: @posts
+    - else
+      .post__search__noresult
+        %p.post__search__noresult__message
+          検索結果はありませんでした…
+        %p.post__search__noresult__message
+          キーワードを変えてみてね！
+

@@ -24,7 +24,7 @@
           = link_to 'TravelApp', root_path, class: "brand-logo"
           %ul#nav-mobile.right.hide-on-med-and-down
             %li
-              = link_to "#" do
+              = link_to search_posts_path do
                 %i.material-icons search
             - if user_signed_in?
               %li
