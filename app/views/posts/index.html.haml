@@ -7,9 +7,9 @@
   .freespace
     .freespace__content
       .freespace__sliderbox
-        = image_tag "/images/topslider1.PNG", class: "slider__panel"
-        = image_tag "/images/topslider2.PNG", class: "slider__panel"
-        = image_tag "/images/topslider3.PNG", class: "slider__panel"
+        = image_tag "topslider1.png", class: "slider__panel"
+        = image_tag "topslider2.png", class: "slider__panel"
+        = image_tag "topslider3.png", class: "slider__panel"
       .freespace__sidebar
         %ul.freespace__sidebar__menu
           = render partial: 'freespace__sidebar', collection: @sidebarAreas, as: 'sidebarArea' 
