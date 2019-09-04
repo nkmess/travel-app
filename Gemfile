@@ -64,6 +64,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
+gem "aws-sdk-s3", require: false
 gem 'countries'
 gem 'devise'
 gem 'enum_help'
