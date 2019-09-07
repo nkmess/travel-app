@@ -1,7 +1,7 @@
 # Travel-app
 
 Travel-app はRuby on Railsで作成中の旅行に関する画像/記事を投稿できるアプリです。
-
+本番環境： https://travel-pic-app.herokuapp.com/
 
 # 機能一覧
 
