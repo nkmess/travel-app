@@ -12,5 +12,6 @@ Travel-app はRuby on Railsで作成中の旅行に関する画像/記事を投�
 * 記事編集機能
 * 記事削除機能
 * 記事検索機能
+* いいね機能(非同期)
 * ページネーション機能(gem kaminari)
 * DB(MySQL)
