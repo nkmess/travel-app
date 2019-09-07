@@ -1,0 +1,6 @@
+- if post.like?(current_user)
+  = link_to "/posts/#{post.id}/likes", post: post, method: :delete, remote: true, class: "info_btn" do
+    %i.material-icons favorite
+- else
+  = link_to "/posts/#{post.id}/likes", post: post, method: :post, remote: true, class: "info_btn" do
+    %i.material-icons favorite_border

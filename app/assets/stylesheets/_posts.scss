@@ -118,6 +118,9 @@
     height: 460px;
     &__lists {
       margin: 20px;
+      #edit-list{
+        display: flex;
+      }
     }
     &__list {
       width: 100%;
@@ -141,7 +144,7 @@
     margin: 30px auto 40px;
   }
 }
-.edit_btn {
+.info_btn {
   margin-right: 20px;
 }
 

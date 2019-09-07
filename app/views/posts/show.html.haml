@@ -20,12 +20,17 @@
             %label ユーザー名
             .post__info__sideinfo__list-contents
             = @post.user.name
-          - if user_signed_in? && current_user.id == @post.user.id
-            %li.post__info__sideinfo__list
-              = link_to edit_post_path, class: "edit_btn" do
-                %i.material-icons mode_edit
-              = link_to post_path(@post.id), method: :delete, data: {confirm: "削除しますか？"}, class: "edit_btn" do
-                %i.material-icons delete
+          - if user_signed_in?
+            %li.post__info__sideinfo__lists#edit-list
+              .post__info__sideinfo__lists__like{id: "like-#{@post.id}"}
+                = render partial: "like", locals: {post: @post}
+              - if user_signed_in? && current_user.id == @post.user.id
+                .post__info__sideinfo__lists__edit
+                  = link_to edit_post_path, class: "info_btn" do
+                    %i.material-icons mode_edit
+                .post__info__sideinfo__lists__delete
+                  = link_to post_path(@post.id), method: :delete, data: {confirm: "削除しますか？"}, class: "info_btn" do
+                    %i.material-icons delete
     .post__info__bottom
       .post__info__text
         = @post.text
