@@ -1,10 +1,19 @@
 .mypage__top {
   margin: 10px 200px 30px;
   &__name {
+  display: flex;
+  justify-content: space-around;
   width: 50%;
   margin: 0 auto;
   border-bottom: dotted 1px silver;
   font-size: 20px;
   text-align: center;
+  }
+  &__all-posts{
+    cursor: pointer;
+  }
+  &__liked-posts {
+    color: gray;
+    cursor: pointer;
   }
 }

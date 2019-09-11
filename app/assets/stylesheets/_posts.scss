@@ -29,7 +29,6 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-
     }
   }
 
@@ -38,7 +37,15 @@
     right: 30px;
     bottom: 30px;
   }
+  #liked__posts{
+    display: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 200px 20px;
+  }
 }
+
+
 
 // new.html
 .post__form {

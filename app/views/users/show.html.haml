@@ -1,10 +1,14 @@
 .main__wrapper
   .mypage__top
     .mypage__top__name
-      = @name + "さんの投稿一覧"
-  .post__main
+      .mypage__top__all-posts
+        = @name + "さんの投稿一覧"
+      .mypage__top__liked-posts
+        = @name + "さんのいいね一覧"
+  .post__main#user__posts
     = render partial: 'posts/post', collection: @posts
-
+  .post__main#liked__posts
+    = render partial: 'posts/post', collection: @liked_posts
   .post__main__btn
     = link_to new_post_path, class: "btn-floating btn-large waves-effect waves-light red" do
       %i.material-icons add
