@@ -8,8 +8,10 @@ Rails.application.routes.draw do
     end
   end
 
+  get '/users/:user_id/likes' => "likes#show"
   post '/posts/:post_id/likes' => "likes#create"
   delete '/posts/:post_id/likes' => "likes#destroy"
+
 
   resources :users, only: [:show]
 end
