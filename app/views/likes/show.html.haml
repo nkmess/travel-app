@@ -1,0 +1,15 @@
+.main__wrapper
+  .mypage__top
+    .mypage__top__name
+      .mypage__top__all-posts
+        = link_to "#{@name}さんの投稿一覧", "/users/#{current_user.id}", class: "grey-text lighten-1"
+      .mypage__top__liked-posts
+        = @name + "さんのいいね一覧"
+  .post__main
+    = render partial: 'posts/post', collection: @liked_posts
+  .post__main__btn
+    = link_to new_post_path, class: "btn-floating btn-large waves-effect waves-light red" do
+      %i.material-icons add
+
+  .pagination
+    = paginate(@liked_posts)
