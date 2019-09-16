@@ -1,0 +1,41 @@
+.main-wrapper
+  .top-wrapper
+    .home__top
+      .home__top__container
+        %h1 旅を探そう
+        .home__top__container__btn
+          = link_to "はじめる", posts_path, class: "grey-text darken-4"
+    .home__center
+      .home__center__container
+        %h2 何ができるの？
+        .row.home__center__container__boxes
+          .col.s4.home__center__container__box 
+            .home__center__container__box__icon
+              %i.material-icons photo_camera
+            .home__center__container__box__heading
+              のこす
+            .home__center__container__box__text
+              %p 旅の思い出を写真と文章で残そう。
+              %p とっておきの旅を教えてください。
+          .col.s4.home__center__container__box
+            .home__center__container__box__icon
+              %i.material-icons search
+            .home__center__container__box__heading
+              さがす
+            .home__center__container__box__text
+              %p 好きなキーワードで検索しよう。
+              %p 気になる旅がきっと見つかるはず。
+          .col.s4.home__center__container__box
+            .home__center__container__box__icon
+              %i.material-icons favorite_border
+            .home__center__container__box__heading
+              いいねする
+            .home__center__container__box__text
+              %p お気に入りの写真はいいねしよう。
+              %p 後で見返すことができます。
+    .home__bottom
+      .home__bottom__container
+        .home__bottom__container__text
+          %p さあ、あなたも早速始めてみませんか？
+        .home__bottom__container__btn
+          = link_to "はじめる", posts_path, class: "white-text"

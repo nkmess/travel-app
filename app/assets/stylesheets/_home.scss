@@ -1,0 +1,86 @@
+.home__top {
+  position: relative;
+  height: 550px;
+  background-image: url(landscape.jpg);
+  background-size: cover;
+  &__container {
+    position: absolute;
+    top: 30%;
+    right: 5%;
+    color: white;
+    letter-spacing: 1rem;
+    &__btn {
+      width: 50%;
+      height: 50px;
+      margin: 0 auto;
+      padding: 10px 22px;
+      border-radius: 4px;
+      background-color: white;
+      font-size: 22px;
+      letter-spacing: 0;
+      text-align: center;
+      a {
+        display: block;
+      }
+    }
+  }
+}
+
+.home__center {
+  &__container{
+    margin: 40px 100px 80px;
+    h2 {
+      font-size: 30px;
+      font-weight: bold;
+      text-align: center;
+    }
+    &__boxes {
+      display: flex;
+      justify-content: space-around;
+    }
+    &__box {
+      text-align: center;
+      &__icon {
+        i {
+          margin-bottom: 10px;
+          color: #0091ea;
+          font-size: 60px;
+
+        }
+      }
+      &__heading {
+        margin-bottom: 20px;
+        font-size: 20px;
+      }
+      &__text {
+        color: gray;
+        font-size: 16px;
+        line-height: 30px;
+      }
+    }
+  }
+}
+
+.home__bottom{
+  height: 100%;
+  &__container {
+    margin: 30px 100px;
+    text-align: center;
+    &__text {
+      padding-top: 30px;
+      font-size: 24px;
+
+    }
+    &__btn {
+      height: 50px;
+      width: 15%;
+      margin: 30px auto 100px;
+      border-radius: 4px;
+      background-color: #ff8a65;
+      line-height: 50px;
+      a {
+        display: block;
+      }
+    }
+  }
+}
