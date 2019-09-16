@@ -31,7 +31,7 @@ class PostsController < ApplicationController
     @countries = ISO3166::Country.all
       if @post.save
         flash[:notice] = "投稿が完了しました！"
-        redirect_to root_path
+        redirect_to posts_path
       else
         flash[:alert] = "投稿に失敗しました…"
         render new_post_path
@@ -41,7 +41,7 @@ class PostsController < ApplicationController
   def edit
     @countries = ISO3166::Country.all
     if @post.user.id != current_user.id
-      redirect_to root_path
+      redirect_to posts_path
     end
   end
 
@@ -62,7 +62,7 @@ class PostsController < ApplicationController
     if @post.user_id == current_user.id
       if @post.destroy
         flash[:alert] = "削除しました"
-        redirect_to root_path
+        redirect_to posts_path
       else
         flash[:alert] = "削除に失敗しました"
         redirect_to post_path
