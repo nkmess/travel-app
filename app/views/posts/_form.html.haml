@@ -13,6 +13,8 @@
         .post__form__pic__preview__new
           %img#preview{style:"height: 400px; width: 612px;"}
         = f.file_field :image, id: "image__upload", style: "display: none;"
+        .post__form__pic__preview__btn
+          %p プレビューを削除
 
     .post__form__place
       %label.post__form__top 国

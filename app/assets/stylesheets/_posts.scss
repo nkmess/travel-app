@@ -64,6 +64,17 @@
       &__new{
         display: none;
       }
+      &__btn{
+        width: 20%;
+        margin-top: 10px;
+        padding: 3px;
+        color: white;
+        background-color: #26A699;
+        border: 1px solid #26A699;
+        border-radius:4px;
+        cursor: pointer;
+        display: none;
+      }
     }
   }
 
