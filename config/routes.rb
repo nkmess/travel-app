@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :posts do
     collection do
       get 'search'
+      get 'area_search'
     end
   end
 
