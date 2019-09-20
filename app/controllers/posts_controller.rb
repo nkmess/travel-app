@@ -7,7 +7,7 @@ class PostsController < ApplicationController
     @posts = Post.order("created_at DESC").page(params[:page]).per(6)
 
     @sidebarAreas = 
-      [{area:"Europe", kana:"ヨーロッパ", link:""},
+      [{area:"Europe", kana:"ヨーロッパ", link: },
       {area:"Africa", kana:"アフリカ", link:""},
       {area:"North America", kana:"北アメリカ", link:""},
       {area:"Latin America", kana:"ラテンアメリカ", link:""},
@@ -71,7 +71,7 @@ class PostsController < ApplicationController
   end
 
   def search
-    @posts = Post.where('text LIKE(?)', "%#{params[:post]}%")
+    @posts = Post.where('text LIKE(?)', "%#{params[:post]}%").order("created_at DESC").page(params[:page]).per(6)
   end
 
   private
