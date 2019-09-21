@@ -7,13 +7,13 @@ class PostsController < ApplicationController
     @posts = Post.order("created_at DESC").page(params[:page]).per(6)
 
     @sidebarAreas = 
-      [{area:"Europe", kana:"ヨーロッパ", link:""},
-      {area:"Africa", kana:"アフリカ", link:""},
-      {area:"North America", kana:"北アメリカ", link:""},
-      {area:"Latin America", kana:"ラテンアメリカ", link:""},
-      {area:"Asia", kana:"アジア", link:""},
-      {area:"Oceania & Pacific Ocean", kana:"オセアニア＆太平洋", link:""},
-      {area:"Middle East", kana:"中東", link:""},
+      [{area:"Europe", kana:"ヨーロッパ", link: '/posts/searcharea/#{current_user.id}'},
+      {area:"Africa", kana:"アフリカ", link: search_posts_path},
+      {area:"North America", kana:"北アメリカ", link: search_posts_path},
+      {area:"Latin America", kana:"ラテンアメリカ", link: search_posts_path},
+      {area:"Asia", kana:"アジア", link: search_posts_path},
+      {area:"Oceania & Pacific Ocean", kana:"オセアニア＆太平洋", link: search_posts_path},
+      {area:"Middle East", kana:"中東", link: search_posts_path},
       {area:"All Over The World", kana:"世界各地", link: search_posts_path}]
   end
 
@@ -75,7 +75,7 @@ class PostsController < ApplicationController
   end
 
   def area_search
-    @posts = Post.where(country: 833).page(params[:page]).per(6)
+    @posts = Post.where(user_id: id).page(params[:page]).per(6)
   end
 
   private
