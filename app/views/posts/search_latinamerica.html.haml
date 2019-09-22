@@ -1,4 +1,9 @@
 .main__wrapper
+  .post__area
+    .post__area__top
+      Latin America
+    .post__area__bottom
+      ラテンアメリカ
   .post__search
     = render partial: 'post', collection: @posts
 
@@ -6,5 +11,5 @@
     = link_to new_post_path, class: "btn-floating btn-large waves-effect waves-light red" do
       %i.material-icons add
       
-  .pagination
-  = paginate(@posts)
+
+
