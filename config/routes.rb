@@ -5,8 +5,6 @@ Rails.application.routes.draw do
   resources :posts do
     collection do
       get 'search'
-      # get 'area_search'
-      get '/searcharea/:id' => 'posts#area_search'
     end
   end
 
@@ -14,7 +12,15 @@ Rails.application.routes.draw do
   post '/posts/:post_id/likes' => "likes#create"
   delete '/posts/:post_id/likes' => "likes#destroy"
 
-  # get '/searcharea/:id' => 'posts#area_search'
+  get '/searcharea/europe' => 'posts#search_europe'
+  get '/searcharea/africa' => 'posts#search_africa'
+  get '/searcharea/northamerica' => 'posts#search_northamerica'
+  get '/searcharea/latainamerica' => 'posts#search_latainamerica'
+  get '/searcharea/asia' => 'posts#search_asia'
+  get '/searcharea/oceania' => 'posts#search_oceania'
+  get '/searcharea/middleeast' => 'posts#search_middleeast'
+
+
 
   resources :users, only: [:show]
 end
