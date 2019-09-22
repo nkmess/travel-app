@@ -1,0 +1,15 @@
+.main__wrapper
+  .post__area
+    .post__area__top
+      Africa
+    .post__area__bottom
+      アフリカ
+  .post__search
+    = render partial: 'post', collection: @posts
+
+  .post__main__btn
+    = link_to new_post_path, class: "btn-floating btn-large waves-effect waves-light red" do
+      %i.material-icons add
+      
+
+

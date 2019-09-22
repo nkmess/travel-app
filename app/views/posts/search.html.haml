@@ -9,3 +9,10 @@
         %p.post__search__noresult__message
           キーワードを変えてみてね！
 
+  .post__main__btn
+    = link_to new_post_path, class: "btn-floating btn-large waves-effect waves-light red" do
+      %i.material-icons add
+      
+  .pagination
+  = paginate(@posts)
+

@@ -7,14 +7,14 @@ class PostsController < ApplicationController
     @posts = Post.order("created_at DESC").page(params[:page]).per(6)
 
     @sidebarAreas = 
-      [{area:"Europe", kana:"ヨーロッパ", link:""},
-      {area:"Africa", kana:"アフリカ", link:""},
-      {area:"North America", kana:"北アメリカ", link:""},
-      {area:"Latin America", kana:"ラテンアメリカ", link:""},
-      {area:"Asia", kana:"アジア", link:""},
-      {area:"Oceania & Pacific Ocean", kana:"オセアニア＆太平洋", link:""},
-      {area:"Middle East", kana:"中東", link:""},
-      {area:"All Over The World", kana:"世界各地", link:""}]
+      [{area:"Europe", kana:"ヨーロッパ", link: "/searcharea/europe"},
+      {area:"Africa", kana:"アフリカ", link: "/searcharea/africa"},
+      {area:"North America", kana:"北アメリカ", link: "/searcharea/northamerica"},
+      {area:"Latin America", kana:"ラテンアメリカ", link: "/searcharea/latinamerica"},
+      {area:"Asia", kana:"アジア", link: "/searcharea/asia"},
+      {area:"Oceania & Pacific Ocean", kana:"オセアニア＆太平洋", link: "/searcharea/oceania"},
+      {area:"Middle East", kana:"中東", link: "/searcharea/middleeast"},
+      {area:"All Over The World", kana:"世界各地", link: search_posts_path}]
   end
 
   def show
@@ -71,7 +71,35 @@ class PostsController < ApplicationController
   end
 
   def search
-    @posts = Post.where('text LIKE(?)', "%#{params[:post]}%")
+    @posts = Post.where('text LIKE(?)', "%#{params[:post]}%").order("created_at DESC").page(params[:page]).per(6)
+  end
+
+  def search_europe
+    @posts = Post.where(country: ["208", "250", "528", "578", "643", "724", "752", "826"])
+  end
+
+  def search_africa
+    @posts = Post.where(country: ["710, 818"])
+  end
+
+  def search_northamerica
+    @posts = Post.where(country: ["124", "840"])
+  end
+
+  def search_latainamerica
+    @posts = Post.where(country: ["032","076", "152"])
+  end
+
+  def search_asia
+    @posts = Post.where(country: ["156", "158", "344", "392", "410", "702", "764"])
+  end
+
+  def search_oceania
+    @posts = Post.where(country: ["036", "316",  "554"])
+  end
+
+  def search_middleeast
+    @posts = Post.where(country: ["682", "792"])
   end
 
   private

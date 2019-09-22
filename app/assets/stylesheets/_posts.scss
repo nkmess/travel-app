@@ -180,3 +180,16 @@
     }
   }
 }
+
+.post__area{
+  margin: 10px 200px 20px;
+  color: gray;
+  font-family: 'Times New Roman', Times, serif;
+  &__top{
+    font-size: 60px;
+  }
+  &__bottom{
+    padding-bottom: 10px;
+    border-bottom: 1px dotted silver;
+  }
+}

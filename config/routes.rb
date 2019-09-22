@@ -12,6 +12,15 @@ Rails.application.routes.draw do
   post '/posts/:post_id/likes' => "likes#create"
   delete '/posts/:post_id/likes' => "likes#destroy"
 
+  get '/searcharea/europe' => 'posts#search_europe'
+  get '/searcharea/africa' => 'posts#search_africa'
+  get '/searcharea/northamerica' => 'posts#search_northamerica'
+  get '/searcharea/latinamerica' => 'posts#search_latinamerica'
+  get '/searcharea/asia' => 'posts#search_asia'
+  get '/searcharea/oceania' => 'posts#search_oceania'
+  get '/searcharea/middleeast' => 'posts#search_middleeast'
+
+
 
   resources :users, only: [:show]
 end
