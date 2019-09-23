@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  before_action :authenticate_user!, except: [:index, :show, :search]
+  before_action :authenticate_user!, except: [:index, :show, :search, :search_europe, :search_africa, :search_northamerica, :search_latainamerica, :search_asia, :search_oceania, :search_middleeast]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
