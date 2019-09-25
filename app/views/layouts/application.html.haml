@@ -21,11 +21,9 @@
     %header
       %nav.light-blue.lighten-3
         .nav-wrapper
+          = image_tag "Travel App.png", class: "header-pic"
           = link_to 'TravelApp', posts_path, class: "brand-logo"
           %ul#nav-mobile.right.hide-on-med-and-down
-            -# %li
-            -#   = link_to search_posts_path do
-            -#     %i.material-icons search
             - if user_signed_in?
               %li
                 = link_to 'Logout', destroy_user_session_path, method: :delete
