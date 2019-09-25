@@ -4,12 +4,13 @@
       = ISO3166::Country.find_country_by_number(post.country).alpha3
       = ISO3166::Country.find_country_by_number(post.country).emoji_flag
     .card
-      .card-image
-        = image_tag post.image
+      = link_to post_path(post, params: { post_id: params[:id]}) do
+        .card-image
+          = image_tag post.image
       .card-content
         %p
           = post.text
       .card-action
-        = link_to "Show Detail", post_path(post, params: { post_id: params[:id]}), class: "pink-text lighten-2"
+        = link_to "Show Detail", post_path(post, params: { post_id: params[:id]}), class: "deep-orange-text lighten-2"
 
 
