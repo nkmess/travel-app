@@ -21,3 +21,19 @@
   .pagination
   = paginate(@posts)
 
+  .recommend
+    .recommend__top
+      次はどこにいく？
+    .recommend__box
+      .recommend__box__left
+        = link_to root_path do
+          = image_tag 'https://images.pexels.com/photos/753626/pexels-photo-753626.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500', class: "recommend__box__left__image"
+      .recommend__box__right
+        .recommend__box__right__title
+          オマーン世界遺産の城塞＆ドバイ豪華砂漠ホテルとマディナ・ジュメイラの5ツ星リゾート滞在☆世界遺産の観光付き！☆同じアラビア半島の国でも全く異なる二国周遊の旅
+        .recommend__box__right__credit
+          =link_to "http://webservice.recruit.co.jp" do
+            %img{:alt => "エイビーロード航空券Webサービス", :border => "0", :height => "17", :src => "http://webservice.recruit.co.jp/banner/abroad-air-s.gif", :title => "エイビーロード航空券Webサービス", :width => "135"}/
+
+
+
