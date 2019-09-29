@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
-    @posts = Post.order("created_at DESC").page(params[:page]).per(6)
+    @posts = Post.recent.page(params[:page]).per(6)
 
     @sidebarAreas = 
       [{area:"Europe", kana:"ヨーロッパ", link: "/searcharea/europe"},
@@ -89,7 +89,7 @@ class PostsController < ApplicationController
   end
 
   def search
-    @posts = Post.where('text LIKE(?)', "%#{params[:post]}%").order("created_at DESC").page(params[:page]).per(6)
+    @posts = Post.where('text LIKE(?)', "%#{params[:post]}%").recent.page(params[:page]).per(6)
   end
 
   def search_europe

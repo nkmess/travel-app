@@ -5,6 +5,7 @@ class Post < ApplicationRecord
   has_many :likes
   has_many :liked_users, through: :likes, source: :user
 
+  scope :recent, -> { order("created_at DESC")}
 
   enum duration: [:in_two_days, :in_three_days, :in_five_days, :in_seven_days,  :in_two_weeks, :in_a_month, :in_three_months, :in_six_months, :in_a_year, :over_a_year]
 
