@@ -26,14 +26,14 @@
       Where are you planning to go?
     .recommend__box
       .recommend__box__left
-        = link_to root_path do
-          = image_tag 'https://images.pexels.com/photos/753626/pexels-photo-753626.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500', class: "recommend__box__left__image"
+        = link_to @tour_link, target: :_blank do
+          = image_tag @tour_image, class: "recommend__box__left__image"
       .recommend__box__right
         .recommend__box__right__title
-          オマーン世界遺産の城塞＆ドバイ豪華砂漠ホテルとマディナ・ジュメイラの5ツ星リゾート滞在☆世界遺産の観光付き！☆同じアラビア半島の国でも全く異なる二国周遊の旅
+          = @tour_title
         .recommend__box__right__bottom
           .recommend__box__right__price
-            10000 〜 30000円
+            = @min_price + "〜" + @max_price + "円"
           .recommend__box__right__credit
             =link_to "http://webservice.recruit.co.jp" do
               %img{:alt => "エイビーロード航空券Webサービス", :border => "0", :height => "17", :src => "http://webservice.recruit.co.jp/banner/abroad-air-s.gif", :title => "エイビーロード航空券Webサービス", :width => "135"}/
