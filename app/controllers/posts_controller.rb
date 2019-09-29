@@ -2,6 +2,7 @@ class PostsController < ApplicationController
 
   before_action :authenticate_user!, except: [:index, :show, :search, :search_europe, :search_africa, :search_northamerica, :search_latainamerica, :search_asia, :search_oceania, :search_middleeast]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_countries, onle: [:new, :create, :edit, :update]
 
   def index
     @posts = Post.recent.page(params[:page]).per(6)
@@ -41,12 +42,10 @@ class PostsController < ApplicationController
   
   def new
     @post = Post.new
-    @countries = ISO3166::Country.all
   end
 
   def create
     @post= Post.new(post_params)
-    @countries = ISO3166::Country.all
       if @post.save
         flash[:notice] = "投稿が完了しました！"
         redirect_to posts_path
@@ -57,14 +56,12 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @countries = ISO3166::Country.all
     if @post.user.id != current_user.id
       redirect_to posts_path
     end
   end
 
   def update
-    @countries = ISO3166::Country.all
     if @post.user_id == current_user.id
       if @post.update(post_params)
         flash[:notice] = "更新しました"
@@ -125,15 +122,16 @@ class PostsController < ApplicationController
     params.require(:post).permit(:text, :country, :duration, :image).merge(user_id: current_user.id)
   end
 
-
-
   def move_to_index
     redirect_to action: :index unless user_signed_in?
   end
 
-
   def set_post
     @post = Post.find(params[:id])
+  end
+
+  def set_countries
+    @countries = ISO3166::Country.all
   end
 
 end
