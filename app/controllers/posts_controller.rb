@@ -90,31 +90,31 @@ class PostsController < ApplicationController
   end
 
   def search_europe
-    @posts = Post.where(country: ["208", "250", "528", "578", "643", "724", "752", "826"])
+    @posts = Post.europe.recent
   end
 
   def search_africa
-    @posts = Post.where(country: ["710, 818"])
+    @posts = Post.africa.recent
   end
 
   def search_northamerica
-    @posts = Post.where(country: ["124", "840"])
+    @posts = Post.north_america.recent
   end
 
   def search_latainamerica
-    @posts = Post.where(country: ["032","076", "152"])
+    @posts = Post.latain_america.recent
   end
 
   def search_asia
-    @posts = Post.where(country: ["156", "158", "344", "392", "410", "702", "764"])
+    @posts = Post.asia.recent
   end
 
   def search_oceania
-    @posts = Post.where(country: ["036", "316",  "554"])
+    @posts = Post.oceania.recent
   end
 
   def search_middleeast
-    @posts = Post.where(country: ["682", "792"])
+    @posts = Post.middle_east.recent
   end
 
   private
