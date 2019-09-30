@@ -21,3 +21,22 @@
   .pagination
   = paginate(@posts)
 
+  .recommend
+    .recommend__top
+      Where are you planning to go?
+    .recommend__box
+      .recommend__box__left
+        = link_to @tour_link, target: :_blank do
+          = image_tag @tour_image, class: "recommend__box__left__image"
+      .recommend__box__right
+        .recommend__box__right__title
+          = @tour_title
+        .recommend__box__right__bottom
+          .recommend__box__right__price
+            = @min_price + "〜" + @max_price + "円"
+          .recommend__box__right__credit
+            =link_to "http://webservice.recruit.co.jp" do
+              %img{:alt => "エイビーロード航空券Webサービス", :border => "0", :height => "17", :src => "http://webservice.recruit.co.jp/banner/abroad-air-s.gif", :title => "エイビーロード航空券Webサービス", :width => "135"}/
+
+
+
