@@ -68,6 +68,9 @@
         top: 150px;
         left: 280px;
       }
+      &:hover {
+        opacity: 0.8;
+      }
     }
     &__preview{
       width: 612px;
