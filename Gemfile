@@ -72,6 +72,7 @@ gem 'haml-rails'
 gem 'kaminari'
 gem 'mini_magick'
 gem "nokogiri", ">= 1.10.4"
+gem 'omniauth-facebook'
 gem 'pry-byebug'
 gem 'pry-rails'
 gem 'rails-i18n'
